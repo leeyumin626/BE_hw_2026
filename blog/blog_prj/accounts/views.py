@@ -11,7 +11,7 @@ def signup(request):
         return render(request, 'accounts/signup.html', {'form': form})
     
     form = SignUpForm(request.POST)
-    if form.is_valid():
+    if form.is_valid(): #데이터가 유효한지 검사
         form.save()
         return redirect('accounts:login')
     else:
