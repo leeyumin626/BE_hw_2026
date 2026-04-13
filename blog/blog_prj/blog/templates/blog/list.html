@@ -18,7 +18,7 @@
 
     <a href="{% url 'blog:create' %}">글 작성하기</a>
     {% for post in posts %}
-    <h2><a href="{% url 'blog:detail' post.id %}"> {{post.title }}</a></h2>
+    <h2><a href="{% url 'blog:detail' post.id %}"> {{post.title}}</a></h2>
     <p>{{post.content}}</p>
     <p>{{post.created_at}}</p>
 
