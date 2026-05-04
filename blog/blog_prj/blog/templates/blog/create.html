@@ -12,12 +12,17 @@
       action="{% url 'blog:create' %}"
       enctype="multipart/form-data"
     >
-      {% csrf_token %} 제목 -<input type="text" name="title" /> 내용 -
-      <textarea name="content"></textarea>
-      이미지 -<input type="file" name="image" /> 동영상 -<input
-        type="file"
-        name="video"
-      />
+      {% csrf_token %} 제목 -<input type="text" name="title" /> <br />
+      카테고리
+      <select name="category" multiple>
+        {% for category in categories %}
+        <option value="{{ category.id }}">{{ category.name }}</option>
+        {% endfor %}</select
+      ><br /><br />
+      내용 -
+      <textarea name="content"></textarea> <br />
+      이미지 -<input type="file" name="image" /> <br />
+      동영상 -<input type="file" name="video" /> <br />
       <input type="submit" value="작성하기" />
     </form>
   </body>
